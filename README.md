@@ -1,24 +1,62 @@
-# README
+# Receptionist and Doctor Portal Rails Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
 
-Things you may want to cover:
+This is a simple Rails application designed to manage patient records with two user portals: Receptionist and Doctor. Both portals share a single login page, and they have different sets of functionalities.
 
-* Ruby version
+## Features
 
-* System dependencies
+### Shared Features
 
-* Configuration
+- **User Authentication**: Both Receptionists and Doctors use the same login page to authenticate themselves.
+- **Authorization**: Differentiate user roles to allow or restrict access to specific features.
 
-* Database creation
+### Receptionist Portal
 
-* Database initialization
+- **Patient Registration**: Receptionists can register new patients by providing their details, including name, date of birth, contact information, and any other relevant information.
+- **CRUD Operations**: Receptionists can perform CRUD (Create, Read, Update, Delete) operations on patient records.
+  - Create: Add new patient records.
+  - Read: View patient details and lists of registered patients.
+  - Update: Edit patient information.
+  - Delete: Remove patient records.
 
-* How to run the test suite
+### Doctor Portal
 
-* Services (job queues, cache servers, search engines, etc.)
+- **View Registered Patients**: Doctors can view the list of registered patients along with their details.
+- **View Patient Registration Trends**: Doctors can access a graphical representation (graph) that displays the number of patients registered over time. This helps doctors track patient intake trends.
 
-* Deployment instructions
+## Getting Started
 
-* ...
+### Prerequisites
+
+- Ruby (version x.x.x)
+- Ruby on Rails (version x.x.x)
+- Database (e.g., PostgreSQL, MySQL)
+- Bundler gem
+
+### Installation
+
+1. Clone this repository to your local machine.
+
+2. Change into the project directory.
+
+
+3. Install gem dependencies.
+
+
+4. Set up the database and run migrations.
+
+
+5. Start the Rails server.
+
+6. Access the application in your web browser at `http://localhost:3000`.
+
+### Usage
+
+1. Visit the application in your browser and log in using your credentials.
+
+2. If you are a receptionist, you can perform patient registration and CRUD operations.
+
+3. If you are a doctor, you can view registered patients and access the patient registration trends graph.
+
+
