@@ -1,0 +1,62 @@
+<div class="col-md-3 left_col menu_fixed">
+<div class="left_col scroll-view">
+
+    <div class="navbar nav_title" style="border: 0;">
+        <a href="#" class="site_title"><i class="fa fa-paw"></i> <span>Doctor's Online </span></a>
+    </div>
+
+    <div class="profile clearfix">
+        <div class="profile_pic">
+        <h4 class="profile_img"></h4>
+        </div>
+        <div class="profile_info">
+        <h2>
+        <% if user_signed_in?%>
+        <%=current_user.roles.last&.name%>
+        <%end%>
+        </h2>
+        </div>
+    </div>
+    <br>
+
+<!-- /sidebar menu -->
+    <% if current_user.present? %>
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+        <div class="menu_section">
+            <ul class="nav side-menu">
+
+              <% if current_user.roles.last&.name == "RECEPTIONIST" %>
+                <li><a><i class="fa fa-home"></i> Index <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                <li><%= link_to "Patients", patients_path %></li>
+                 </ul>
+                </li>
+
+
+                <li><a><i class="fa fa-check-square-o"></i> Patient Entry <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                <li><%= link_to "Form", new_patient_path %></li>
+                 </ul>
+                </li>
+
+          <% elsif current_user.roles.last&.name == "DOCTOR" %>
+            <li><a><i class="fa fa-home"></i> Index <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                <li><%= link_to "Patients", patients_path %></li>
+                 </ul>
+                </li>
+
+            <li><a><i class="fa fa-home"></i> Patient Data <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                <li><%= link_to "Chart",patient_chart_path %></li>
+                 </ul>
+                </li>
+              <% end %>
+         
+            </ul>
+        </div>
+
+    </div>
+    <%end%>
+</div>
+</div>

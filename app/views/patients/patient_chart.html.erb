@@ -1,0 +1,3 @@
+<h1>Registered Patients </h1>
+
+<%= column_chart Patient.group_by_day_of_week(:created_at, format: "%a").count %>

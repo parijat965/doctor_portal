@@ -1,0 +1,44 @@
+<h1>All Patients</h1>
+
+<table id="datatable" class="table table-hover table-colored table-bordered table-striped">
+
+  <thead>
+    <tr>
+      <th>Sl No.</th>
+      <th>Patient Name</th>
+      <th>Age</th>
+      <th>Mobile</th>
+      <th>Gender</th>
+      <% if current_user.roles.last&.name == "DOCTOR" %>
+      <th>Registerd By</th>
+      <%end%>
+      <th>Show</th>
+      <% if current_user.roles.last&.name == "RECEPTIONIST" %>
+      <th>Update</th>
+      <th>Delete </th>
+      <%end%>
+    </tr>
+  </thead>
+  <tbody>
+    <% @all_patients.each_with_index do |all_patient,index| %>
+      <tr>
+      <td><%= index + 1 %></td>
+
+        <td><%= all_patient.name %></td>
+        <td><%= all_patient.age %></td>
+        <td><%= all_patient.mobile %></td>
+        <td><%= all_patient.gender %></td>
+        <% if current_user.roles.last&.name == "DOCTOR" %>
+         <td><%= all_patient.user.name%></td>
+       <%end%>
+       <td><%= link_to "View", patient_path(all_patient.id),class:"btn btn-info" %> </td>
+        <% if current_user.roles.last&.name == "RECEPTIONIST" %>
+        <td><%= link_to "Update",edit_patient_path(all_patient.id),class:"btn btn-info" %> </td>
+       <td> <%= link_to 'Delete', delete_patient_path(all_patient.id), method: :delete, data: { confirm: 'Are you sure?' } ,class:"btn btn-danger"%></td>
+       <%end%>
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

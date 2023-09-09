@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="x_panel">
+        <div class="x_title">
+          <h1>Update Patient Details</h1>
+        </div>
+        <div class="x_content">
+
+
+
+<%= form_for    @all_patient , url: patient_path, method: :PATCH do |form| %>
+
+
+    <div>
+    <%=form.label :Name%>
+    <%=form.text_field :name,{class: "form-control"} %>
+    </div>
+
+    <div>
+    <%=form.label :age %>
+    <%=form.text_field :age ,{class: "form-control"} %>
+    </div>
+
+    <div>
+    <%=form.label :mobile %>
+    <%=form.text_field :mobile ,{class: "form-control"} %>
+    </div>
+
+    <div>
+    <%=form.label :gender %>
+    <%=form.text_field :gender ,{class: "form-control"} %>
+    </div>
+
+    <div>
+    <%=form.label :address%>
+    <%=form.text_field :address,{class: "form-control"} %>
+    </div>
+
+    <div>
+    <%=form.label :description %>
+    <%=form.text_field :description ,{class: "form-control"} %>
+    </div>
+
+
+    <div>
+      <%= form.submit "Update" ,class:"btn btn-group btn-primary btn-animated"%>
+    </div>
+  <% end %>
+
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
