@@ -29,9 +29,9 @@ This is a simple Rails application designed to manage patient records with two u
 
 ### Prerequisites
 
-- Ruby (version x.x.x)
-- Ruby on Rails (version x.x.x)
-- Database (e.g., PostgreSQL, MySQL)
+- Ruby (version 3.2.2)
+- Ruby on Rails (version 7.0.6)
+- Database (PostgreSQL)
 - Bundler gem
 
 ### Installation
